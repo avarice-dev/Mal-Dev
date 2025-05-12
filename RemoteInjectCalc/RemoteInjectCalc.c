@@ -119,6 +119,11 @@ int main() {
 		return -1;
 	}
 	WaitForSingleObjectEx(hRemoteThread, 2000, FALSE);
+
+	// Polite to free the memory
+	if (!VirtualFreeEx(hProcess, pRemotePayload, 0, MEM_RELEASE)) {
+		printf("[!] Error freeing remote process memory");
+	}
 	
 	printf("[*] Remote thread started! \n");
 	printf("[i] Press Enter to quit...");
