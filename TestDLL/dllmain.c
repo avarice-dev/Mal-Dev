@@ -2,7 +2,7 @@
 
 INT __declspec(dllexport) PopMessageBox(VOID) {
 
-    MessageBoxW(NULL, L'Test Message', L'Test Title', MB_OK | MB_ICONINFORMATION);
+    MessageBoxW(NULL, L"Test Message", L"Test Title", MB_OK | MB_ICONINFORMATION);
 
 }
 
